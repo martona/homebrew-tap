@@ -1,7 +1,7 @@
 class Yo < Formula
   desc "LLM command assistant for your shell"
   homepage "https://github.com/martona/yo"
-  version "0.2.0"
+  version "0.2.2"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,13 +13,13 @@ class Yo < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/martona/yo/releases/download/v0.2.0/yo-macos-arm64.zip"
-      sha256 "4d686176be4526675225d2569f3845f7222df19bfa3bc623f00422e7568c1602"
+      url "https://github.com/martona/yo/releases/download/v0.2.2/yo-macos-arm64.zip"
+      sha256 "dd2340034571f945bbb93b6453a98a249014ec549b9d4ec5fc475b9e354d4dcc"
     end
 
     on_intel do
-      url "https://github.com/martona/yo/releases/download/v0.2.0/yo-macos-amd64.zip"
-      sha256 "1ca2be9240a410dd6a4d437911ebee241a651cf1127988786bbf9359f5c206a2"
+      url "https://github.com/martona/yo/releases/download/v0.2.2/yo-macos-amd64.zip"
+      sha256 "cb93bfef318e9cf900afe62b7c266973aaa909503690eaec55a66e3fc89311c6"
     end
   end
 
