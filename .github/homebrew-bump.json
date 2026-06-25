@@ -1,0 +1,19 @@
+{
+  "targets": {
+    "yo": {
+      "kind": "formula",
+      "path": "Formula/yo.rb",
+      "release_repo": "martona/yo",
+      "checksum_asset": "SHA256SUMS.txt",
+      "asset_url_template": "https://github.com/{release_repo}/releases/download/{tag}/{file}",
+      "assets": [
+        {
+          "file": "yo-macos-arm64.zip"
+        },
+        {
+          "file": "yo-macos-amd64.zip"
+        }
+      ]
+    }
+  }
+}

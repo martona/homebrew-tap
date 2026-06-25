@@ -1,0 +1,66 @@
+name: Bump release package
+
+on:
+  repository_dispatch:
+    types: [bump-homebrew-package]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Configured target to bump, e.g. yo"
+        required: true
+        type: string
+      tag:
+        description: "Release tag, e.g. v0.2.2"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bump-${{ github.event.client_payload.target || inputs.target }}
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: macos-latest
+    env:
+      TARGET: ${{ github.event.client_payload.target || inputs.target }}
+      TAG: ${{ github.event.client_payload.tag || inputs.tag }}
+      TAP: martona/tap
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+
+      - name: Validate inputs
+        shell: bash
+        run: |
+          if [[ -z "$TARGET" || -z "$TAG" ]]; then
+            echo "::error::target and tag are required"
+            exit 1
+          fi
+
+      - name: Bump package
+        id: bump
+        shell: bash
+        run: python3 .github/scripts/bump_homebrew_release.py --target "$TARGET" --tag "$TAG"
+
+      - name: Audit formula
+        if: steps.bump.outputs.changed == 'true' && steps.bump.outputs.kind == 'formula'
+        shell: bash
+        run: brew audit --formula --tap="$TAP" "${{ steps.bump.outputs.target }}"
+
+      - name: Audit cask
+        if: steps.bump.outputs.changed == 'true' && steps.bump.outputs.kind == 'cask'
+        shell: bash
+        run: brew audit --cask --tap="$TAP" "${{ steps.bump.outputs.target }}"
+
+      - name: Commit bump
+        if: steps.bump.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.bump.outputs.path }}"
+          git commit -m "bump ${{ steps.bump.outputs.target }} to ${{ steps.bump.outputs.version }}"
+          git push

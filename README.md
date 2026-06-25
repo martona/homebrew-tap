@@ -2,6 +2,10 @@
 
 Homebrew formulae and casks for martona macOS software.
 
+Release bumps are handled by `.github/workflows/bump-release.yml`. The workflow
+is config-driven (`.github/homebrew-bump.json`) so additional formulae/casks can
+share the same updater.
+
 ## Install
 
 ```sh
