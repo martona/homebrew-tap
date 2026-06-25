@@ -14,19 +14,19 @@ class Yo < Formula
   on_macos do
     on_arm do
       url "https://github.com/martona/yo/releases/download/v0.2.2/yo-macos-arm64.zip"
-      sha256 "dd2340034571f945bbb93b6453a98a249014ec549b9d4ec5fc475b9e354d4dcc"
+      sha256 "d7efa67e60c44ca3748c4a05f36198872f61a57d29586d44093cc9758c8dccac"
     end
 
     on_intel do
       url "https://github.com/martona/yo/releases/download/v0.2.2/yo-macos-amd64.zip"
-      sha256 "cb93bfef318e9cf900afe62b7c266973aaa909503690eaec55a66e3fc89311c6"
+      sha256 "ea118563ad578c5bbb515eb92395b68d18598555967da98fadc0cdf2d77fcf1d"
     end
   end
 
   def install
     bin.install "yo"
     doc.install "README.md"
-    pkgshare.install "LICENSE", "NOTICE", "third-party-licenses"
+    pkgshare.install "LICENSE", "NOTICE", "THIRD-PARTY-LICENSES.txt"
   end
 
   def caveats
