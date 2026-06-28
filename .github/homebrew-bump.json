@@ -14,6 +14,19 @@
           "file": "yo-macos-amd64.zip"
         }
       ]
+    },
+    "gig": {
+      "kind": "cask",
+      "path": "Casks/gig.rb",
+      "release_repo": "martona/gig",
+      "checksum_asset": "SHA256SUMS.txt",
+      "asset_url_template": "https://github.com/{release_repo}/releases/download/{tag}/{file}",
+      "assets": [
+        {
+          "file": "gig-macos-arm64.zip",
+          "update_url": false
+        }
+      ]
     }
   }
 }

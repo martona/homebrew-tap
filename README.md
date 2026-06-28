@@ -32,5 +32,17 @@ Installs the signed, notarized `clipp.app` into Applications and links the bundl
 CLI (`clipp copy` / `clipp paste` / `clipp ls`) onto your PATH — the GUI and the CLI are the
 same binary. Launch Clipp once to create or join a group (shared name + passphrase).
 
-Apple Silicon only (the macOS build is arm64). See
+Apple Silicon only. See
 [`martona/clipp`](https://github.com/martona/clipp).
+
+### gig — Frigate viewer (cask)
+
+```sh
+brew install --cask martona/tap/gig
+```
+
+Installs the signed, notarized `gig.app` into Applications. Launch it and point it at
+your Frigate server.
+
+Apple Silicon only. See
+[`martona/gig`](https://github.com/martona/gig).
