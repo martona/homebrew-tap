@@ -14,6 +14,7 @@ cask "clipp" do
   end
 
   depends_on arch: :arm64
+  depends_on macos: :sonoma
 
   app "clipp.app"
   # The same binary is the menu-bar app and the `clipp` CLI (copy/paste/ls); linking it
