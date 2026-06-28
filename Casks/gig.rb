@@ -1,6 +1,6 @@
 cask "gig" do
-  version "0.1.0.2"
-  sha256 "4c8c808e177d43d3d4b79e4a67f0cbbe835bede60aba4956ac80e3c134220999"
+  version "0.2.0.4"
+  sha256 "5b4abb9815a9d179c143ec91ebaa8ed41c9e12772a384864e2960be65892d4b5"
 
   url "https://github.com/martona/gig/releases/download/v#{version}/gig-macos-arm64.zip",
       verified: "github.com/martona/gig/"
