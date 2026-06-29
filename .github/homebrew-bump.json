@@ -12,6 +12,12 @@
         },
         {
           "file": "yo-macos-amd64.zip"
+        },
+        {
+          "file": "yo-linux-amd64"
+        },
+        {
+          "file": "yo-linux-arm64"
         }
       ]
     },
