@@ -27,6 +27,19 @@
           "update_url": false
         }
       ]
+    },
+    "clipp": {
+      "kind": "cask",
+      "path": "Casks/clipp.rb",
+      "release_repo": "martona/clipp",
+      "checksum_asset": "SHA256SUMS.txt",
+      "asset_url_template": "https://github.com/{release_repo}/releases/download/{tag}/{file}",
+      "assets": [
+        {
+          "file": "clipp-macos-arm64.zip",
+          "update_url": false
+        }
+      ]
     }
   }
 }
