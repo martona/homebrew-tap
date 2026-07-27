@@ -1,6 +1,6 @@
 cask "clipp" do
-  version "1.3.1.142"
-  sha256 "748a4102de39c5b739234e35126c7c071197ec222b63b2b472567522d4dd1cfd"
+  version "1.4.0.150"
+  sha256 "39f322e84a47b1cd6d48b48ee956438fa6506bbdd8d970ed2cfd03e05590712e"
 
   url "https://github.com/martona/clipp/releases/download/v#{version}/clipp-macos-arm64.zip",
       verified: "github.com/martona/clipp/"
